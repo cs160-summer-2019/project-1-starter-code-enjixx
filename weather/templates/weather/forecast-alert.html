@@ -3,14 +3,215 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Forecast - Alert!</title>
+	<title>Forecast</title>
 	
 	<link rel="stylesheet" type="text/css" href="{% static 'weather/vendors/bootstrap/css/bootstrap.css' %}" />
 	<link rel="stylesheet" type="text/css" href="{% static 'weather/css/style.css' %}" />
+  <link rel = "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+  body {
+    background-image: url(https://images.unsplash.com/photo-1519741397735-aee87e71d9a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80);
+    background-size: cover;
+    background-attachment: fixed;
+    margin:0;}
+
+  .icon-bar {
+    width: 90px;
+    background-color: #2E8B57;
+    float: right;
+    margin-bottom: 50%;
+  }
+
+  .icon-bar a {
+    display: block;
+    text-align: center;
+    padding: 16px;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 36px;
+  }
+    
+   .icon-bar a:hover {
+    background-color: #006400;
+  }
+
+
+  .active {
+    background-color: #4CAF50;
+  }
+    div.transbox {
+      background-color: whitesmoke;
+      opacity : 0.7;
+      position:fixed;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding: 20px;
+      border: 2px solid #B22222;
+      border-radius: 25px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -150%);
+      
+    }
+    div.transbox p1{
+      position: center;
+      color: black;
+      font-size: 150px;
+      font-family: Serif;
+      
+    }
+    div.transbox p2{
+      font-size: 60px;  
+      font-family: Monospace;
+    }
+    .right{
+      float:left;
+      font-size: 40px;
+      font-family: Monospace;
+    }
+    .left{
+      float:right;
+      font-size: 40px;
+      font-family: Monospace;
+    }
+    .plant{
+      
+      position : absolute;
+      left: 0px;
+      bottom: 0px;
+    }
+    p.speech {
+      position: relative;
+      width: 200px;
+      height: 100px;
+      text-align: center;
+      line-height: 100px;
+      background-color: #B22222;
+      border: 2px solid #B22222;
+      border-radius: 30px;
+      color: black;
+      font-size: 20px;
+      font-weight: bold;
+      font-style: italic;
+      left: 200px;
+      bottom: 20px;
+     
+    }
+    p.speech:before {
+      content: ' ';
+      position: absolute;
+      width: 0;
+      height: 0;
+      left: 30px;
+      top: 90px;
+      border: 25px solid;
+      border-color: #B22222 transparent transparent #B22222;
+    }
+    p.speech: after {
+      content:' ';
+      position: absolute;
+      width: 0;
+      height: 0;
+      left: 38px;
+      top:100px;
+      border: 25px solid;
+      border-color: #006400 transparent transparent #006400;
+    }
+    .btn {
+      position: absolute;
+      background-color: #B22222;
+      
+      color: white;
+      cursor: pointer;
+      padding: 12px;
+      font-size: 30px;
+      
+     
+      
+    }
+    .btn: hover {
+      background-color: #8B0000; 
+    }
+   
+    .modal-header {
+      background-color: #CD5C5C
+      
+    }
+    .modal-footer {
+      overflow:auto;
+    }
+    
+      
+    
+  </style>
+   
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
 </head>
 <body>
-	<!-- your single-location forecast with alert interface here -->
+	<!-- your single-location forecast interface here -->
+ <div class = "background">
+   <div class = "transbox">
+       <p1>
+        <center> 70&#8457; 
+         <!--button id ="AlertBtn" class = "btn" data-toggle = "modal" data-target = "#myModal">
+          <i class= "fa fa-exclamation-triangle"></i>
+         </button>-->
+          <button type = "button" id ="AlertBtn" class = "btn" data-toggle = "modal" data-target = "#myModal">
+          <i class= "fa fa-exclamation-triangle"></i>
+         </button>
+         </center>
+     </p1>
+     <p2>
+      <center>Berkeley, CA</center> 
+      
+     </p2>
+     <p3><span class = "right">Hi: 80&#8457;</span><span class="left">Lo: 65&#8457;</span></p3>
+   </div>
+  </div>
+ <div class = "icon-bar">
+  <a class="active" href="#"><i class="fa fa-pagelines"></i></a> 
+  <a href="#"><i class="fa fa-search"></i></a> 
+  <a href="#"><i class="fa fa-info-circle"></i></a> 
+  <a href="http://project-1-starter-code-enjixx-kenkhlen865098.codeanyapp.com:8000/weather/comparison/"><i class="fa fa-list"></i></a> 
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+         
+          <h4 class="modal-title">Emergency Alert!</h4>
+          <button type = "button " class ="close"  data-dismiss = "modal">
+           &times;
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Tornado Warning in this area til 12:00 AM EDT. Take shelter now.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Got it</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div id = "plant" class="plant">
+    <p class ="speech">
+      Extreme Weather! 
+    </p>
+     <img src = "https://i1.wp.com/wallpaper.fitzdecarts.com/wp-content/uploads/2018/02/animated-flower-gifs.gif?resize=806%2C806" width="300" height="350">
+    
+  </div>
+ 
 </body>
 </html>
 

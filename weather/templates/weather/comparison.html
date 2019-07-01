@@ -7,9 +7,235 @@
 	
 	<link rel="stylesheet" type="text/css" href="{% static 'weather/vendors/bootstrap/css/bootstrap.css' %}" />
 	<link rel="stylesheet" type="text/css" href="{% static 'weather/css/style.css' %}" />
+   <link rel = "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+  body {
+    background-image: url(https://images.unsplash.com/photo-1519741397735-aee87e71d9a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80);
+    background-size: cover;
+    background-attachment: fixed;
+    margin:0;}
 
+  .icon-bar {
+    width: 90px;
+    background-color: #2E8B57;
+    float: right;
+    margin-bottom: 50%;
+  }
+
+  .icon-bar a {
+    display: block;
+    text-align: center;
+    padding: 16px;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 36px;
+  }
+
+  .icon-bar a:hover {
+    background-color: #006400;
+  }
+
+  .active {
+    background-color: #4CAF50;
+  }
+  
+    input[type=text]{
+      width: 88%;
+      position: absolute;
+      top: 30px;
+      left: 20px;
+      box-sizing: border-box;
+      border: 2px solid white;
+      border-radius: 10px;
+      font-size: 30px;
+      background-color: white;
+     
+      background-position: 10px 10px;
+      background-repeat : no-repeat;
+      padding : 12px 20px 12px 40px;
+      transition: width 0.4s ease-in-out; 
+    }
+    input[type=text] : focus{
+      width: 100%;
+    }
+    form .fa-search {
+      position: absolute;
+      top: 45px;
+      right: 130px;
+      color: #2F4F4F;
+      
+    }
+    div.transbox {
+      background-color: whitesmoke;
+      opacity : 0.9;
+      position: absolute;
+      border-radius: 25px;
+      top: 50%;
+      left: 50%;
+     transform: translate(-140%, -100%);
+      margin: 20px;
+      
+    }
+    div.transbox p1{
+      position: center;
+      color: black;
+      font-size: 30px;
+      font-family: Monospace;
+      
+    }
+    div.transbox p2{
+      position: center;
+      color: black;
+      font-size: 50px;
+      font-family: Monospace;
+    }
+    
+    div.transbox2 {
+      background-color: whitesmoke;
+      opacity : 0.9;
+      position: absolute;
+      border-radius: 25px;
+      top: 50%;
+      left: 50%;
+     transform: translate(-20%, -100%);
+      margin: 20px;
+      
+    }
+    div.transbox2 p1{
+      position: center;
+      color: black;
+      font-size: 30px;
+      font-family: Monospace;
+      
+    }
+    div.transbox2 p2{
+      position: center;
+      color: black;
+      font-size: 50px;
+      font-family: Monospace;
+    }
+     div.transbox3 {
+      background-color: whitesmoke;
+      opacity : 0.9;
+      position: absolute;
+      border-radius: 25px;
+      top: 50%;
+      left: 50%;
+     transform: translate(-20%, +15%);
+      margin: 20px;
+      
+    }
+    div.transbox3 p1{
+      position: center;
+      color: black;
+      font-size: 30px;
+      font-family: Monospace;
+      
+    }
+    div.transbox3 p2{
+      position: center;
+      color: black;
+      font-size: 50px;
+      font-family: Monospace;
+    }
+    div.transbox4 {
+      background-color: whitesmoke;
+      opacity : 0.9;
+      position: absolute;
+      border-radius: 25px;
+      top: 50%;
+      left: 50%;
+     transform: translate(-140%, +15%);
+      margin: 20px;
+      
+    }
+    div.transbox4 p1{
+      position: center;
+      color: black;
+      font-size: 30px;
+      font-family: Monospace;
+      
+    }
+    div.transbox4 p2{
+      position: center;
+      color: black;
+      font-size: 50px;
+      font-family: Monospace;
+    }
+  </style>
 </head>
+  
 <body>
+  
 	<!-- your comparison interface here -->
+  <div class = "icon-bar">
+  <a href="http://project-1-starter-code-enjixx-kenkhlen865098.codeanyapp.com:8000/weather/forecast/"><i class="fa fa-pagelines"></i></a> 
+  <a href="#"><i class="fa fa-search"></i></a> 
+  <a href="#"><i class="fa fa-info-circle"></i></a> 
+  <a class="active" href="http://project-1-starter-code-enjixx-kenkhlen865098.codeanyapp.com:8000/weather/comparison/"><i class="fa fa-list"></i></a>
+  
+  </div> 
+  <form>
+    <input type = "text" name = "search" placeholder = "Search city">
+    <i class = "fa fa-search" style = "font-size: 45px"></i>
+  </form>
+ <div class = "background">
+   <div class = "transbox">
+       <p1>
+        <center>&nbsp; Berkeley, CA &nbsp;  </center>
+     </p1>
+     <p3>
+      <center> <img src =  "https://media0.giphy.com/media/3ohhwsupwJyzktdgS4/giphy.gif" width = 300; height = 300;></center>
+     </p3>
+     <p2>
+       <center>70&#8457;</center>
+     </p2>
+   </div>
+  </div>
+  
+  <div class = "background">
+   <div class = "transbox2">
+       <p1>
+        <center> San Francisco, CA   </center>
+     </p1>
+     <p3>
+      <center> <img src =  "https://media0.giphy.com/media/hRBmiua92BHEiJ5jHT/200w.webp?cid=790b76115d19bbb55a5137784523c0c3&rid=200w.webp" width = 300; height = 300;></center>
+     </p3>
+     <p2>
+       <center>59&#8457;</center>
+     </p2>
+   </div>
+  </div>
+  
+   <div class = "background">
+   <div class = "transbox3">
+       <p1>
+        <center> Walnut Creek, CA   </center>
+     </p1>
+     <p3>
+      <center> <img src =  "https://media0.giphy.com/media/26n7akkYdGGOk7fPy/giphy.gif?cid=790b76115d19be1b6a383157771372f7&rid=giphy.gif" width = 300; height = 300;></center>
+     </p3>
+     <p2>
+       <center>84&#8457;</center>
+     </p2>
+   </div>
+  </div>
+  
+  <div class = "background">
+   <div class = "transbox4">
+       <p1>
+        <center> Oakland, CA   </center>
+     </p1>
+     <p3>
+      <center> <img src =  "https://media0.giphy.com/media/QBB7NrQGqhh8zbS5CQ/giphy.gif?cid=790b76115d19bbb077476546558a917b&rid=giphy.gif" width = 300; height = 300;></center>
+     </p3>
+     <p2>
+       <center>65&#8457;</center>
+     </p2>
+   </div>
+  </div>
+    <i class = "far fa-trash-alt"></i>
+    
+  </div>
 </body>
 </html>
